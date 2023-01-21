@@ -69,7 +69,7 @@ def _swap(ctx, name : str):
 @click.argument("name")
 @click.option('--force', is_flag=True)
 @click.pass_context
-def _backup(ctx, name  : str):
+def _backup(ctx, name  : str, force):
     try:
         ctx.obj.backup(name, not force)
     except Exception as e:
