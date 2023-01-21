@@ -1,2 +1,3 @@
 # ToFcC
- tower of fantasy account swapper and other utility
+tower of fantasy account swapper and other utility
+prototype WIP
