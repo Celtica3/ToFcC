@@ -54,11 +54,10 @@ def cli(ctx, debug, clear):
 
 @cli.command("swap")
 @click.argument("name")
-@click.option('--force', is_flag=True)
 @click.pass_context
-def _swap(ctx, name : str, force):
+def _swap(ctx, name : str):
     try:
-        ctx.obj.swap(name, not force)
+        ctx.obj.swap(name)
     except Exception as e:
         logging.error(e)
         click.echo("an error occurred")
@@ -68,10 +67,11 @@ def _swap(ctx, name : str, force):
 
 @cli.command("backup")
 @click.argument("name")
+@click.option('--force', is_flag=True)
 @click.pass_context
 def _backup(ctx, name  : str):
     try:
-        ctx.obj.backup(name)
+        ctx.obj.backup(name, not force)
     except Exception as e:
         logging.error(e)
         click.echo("an error occurred")
