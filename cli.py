@@ -54,10 +54,11 @@ def cli(ctx, debug, clear):
 
 @cli.command("swap")
 @click.argument("name")
+@click.option('--force', is_flag=True)
 @click.pass_context
-def _swap(ctx, name : str):
+def _swap(ctx, name : str, force):
     try:
-        ctx.obj.swap(name)
+        ctx.obj.swap(name, not force)
     except Exception as e:
         logging.error(e)
         click.echo("an error occurred")
