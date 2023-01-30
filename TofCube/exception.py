@@ -1,0 +1,3 @@
+
+class TofCubeError(Exception): pass
+
